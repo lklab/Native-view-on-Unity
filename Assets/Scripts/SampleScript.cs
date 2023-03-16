@@ -13,10 +13,8 @@ public class SampleScript : MonoBehaviour
         {
             AndroidJavaClass unityPlayerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject unityActivity = unityPlayerClass.GetStatic<AndroidJavaObject>("currentActivity");
-            AndroidJavaObject myTest = new AndroidJavaObject("com.khlee.androidview.MyTest", unityActivity);
-            //AndroidJavaClass myClass = new AndroidJavaClass("com.khlee.androidview.MyKotlin");
-            //AndroidJavaObject myObject = myClass.GetStatic<AndroidJavaObject>("Companion").Call<AndroidJavaObject>("getInstance", unityActivity);
-            //myObject.Call("showToast", "hellos");
+            AndroidJavaObject myObject = new AndroidJavaObject("com.khlee.androidview.MyTest", unityActivity);
+            myObject.Call("showToast", "hello");
         });
     }
 }
